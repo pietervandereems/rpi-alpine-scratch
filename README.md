@@ -33,10 +33,14 @@ docker build -t alpine-mini .
 ## How to create this image
 
 To create an image based on alpine-latest:
+```bash
    ./mkimage-alpine.sh -s 
+```
 
 Full usage:
+```bash
    ./mkimage-alpine.sh [-r release] [-m mirror] [-s]
+```
 
 (Without the -s option, no rootfs will be saved)
 
