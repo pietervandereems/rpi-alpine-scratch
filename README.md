@@ -35,9 +35,13 @@ docker build -t alpine-mini .
 To create an image based on alpine-latest:
 ```bash
    ./mkimage-alpine.sh -s 
+   docker build -t armhf-alpine .
 ```
 
-Full usage:
+mkimage-alpine.sh creates a rootfs.tar that will be used by the dockerfile as base rootfs
+
+
+Options of the image script:
 ```bash
    ./mkimage-alpine.sh [-r release] [-m mirror] [-s]
 ```
