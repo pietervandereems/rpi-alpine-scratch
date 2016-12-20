@@ -1,3 +1,3 @@
 FROM scratch
 ADD rootfs.tar /
-MAINTAINER Andreas Eiermann <andreas@hypriot.com>
+MAINTAINER Pieter van der Eems <github@eemco.nl>
