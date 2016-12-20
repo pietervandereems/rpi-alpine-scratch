@@ -1,6 +1,6 @@
-# rpi-alpine-scratch [![Build Status](https://armbuilder.hypriot.com/api/badges/hypriot/rpi-alpine-scratch/status.svg)](https://armbuilder.hypriot.com/hypriot/rpi-alpine-scratch)
+Fork of: https://github.com/hypriot/rpi-alpine-scratch.git 
 
-Raspberry Pi compatible Docker Image with a minimal `linux` system.
+Armhf compatible Docker Image with a minimal `linux` system.
 
 ## Details
 - [Source Project Page](https://github.com/hypriot)
@@ -12,7 +12,7 @@ first create the Dockerfile
 
 ```bash
 cat << EOM >> Dockerfile
-FROM hypriot/rpi-alpine-scratch
+FROM pietervandereems/armhf-alpine
 
 RUN apk update && \
 apk upgrade && \
@@ -32,13 +32,13 @@ docker build -t alpine-mini .
 
 ## How to create this image
 
-1. Configure drone
+To create an image based on alpine-latest:
+   ./mkimage-alpine.sh -s 
 
-2. Create and push a tag
-```bash
-git tag v3.3
-git push origin v3.3
-```
+Full usage:
+   ./mkimage-alpine.sh [-r release] [-m mirror] [-s]
+
+(Without the -s option, no rootfs will be saved)
 
 ## License
 

@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x
 
 [ $(id -u) -eq 0 ] || {
   printf >&2 '%s requires root\n' "$0"
@@ -23,6 +24,7 @@ apkv() {
 }
 
 getapk() {
+  echo REPO $REPO
   curl -s $REPO/$ARCH/apk-tools-static-$(apkv).apk |
     tar -xz -C $TMP sbin/apk.static
 }
@@ -69,13 +71,13 @@ while getopts "hr:m:s" opt; do
   esac
 done
 
-REL=${REL:-edge}
+REL=${REL:-latest-stable}
 MIRROR=${MIRROR:-http://nl.alpinelinux.org/alpine}
 SAVE=${SAVE:-0}
 REPO=$MIRROR/$REL/main
 ARCH=armhf
 #ARCH=$(uname -m)
-TAG=firecyberice/armhf-alpine
+TAG=pietervandereems/armhf-alpine
 
 echo -e "prepare\n\n"
 tmp && getapk
