@@ -48,6 +48,11 @@ Options of the image script:
 
 (Without the -s option, no rootfs will be saved)
 
+
+Example:
+./mkimage-alpine.sh -r v3.5 -s
+
+
 ## License
 
 The MIT License (MIT)
