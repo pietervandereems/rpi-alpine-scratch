@@ -79,19 +79,19 @@ ARCH=armhf
 #ARCH=$(uname -m)
 TAG=pietervandereems/armhf-alpine
 
-echo -e "prepare\n\n"
+echo "prepare\n\n"
 tmp && getapk
 
-echo -e "makebase\n\n"
+echo "makebase\n\n"
 mkbase
 
 
-echo -e "config\n\n"
-echo -e "$REPO\n" > $ROOTFS/etc/apk/repositories
+echo "config\n\n"
+echo "$REPO\n" > $ROOTFS/etc/apk/repositories
 #conf
 
-echo -e "pack\n\n"
+echo "pack\n\n"
 pack
 
-echo -e "save\n\n"
+echo "save\n\n"
 save
