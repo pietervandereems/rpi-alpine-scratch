@@ -72,7 +72,7 @@ while getopts "hr:m:s" opt; do
 done
 
 REL=${REL:-latest-stable}
-MIRROR=${MIRROR:-http://nl.alpinelinux.org/alpine}
+MIRROR=${MIRROR:-https://nl.alpinelinux.org/alpine}
 SAVE=${SAVE:-0}
 REPO=$MIRROR/$REL/main
 ARCH=armhf
